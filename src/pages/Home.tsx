@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Clock, Award, Users, CheckCircle, MapPin, Star } from "lucide-react";
+import { Shield, Clock, Award, Users, CheckCircle, MapPin, Star, Phone } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import heroImage from "@/assets/hero-driver-sedan.jpg";
 import teamImage from "@/assets/team-aditya-travels.png";
@@ -47,40 +47,66 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Aditya Travels - Professional chauffeur with corporate sedan"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-transparent" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
-            <span className="inline-block px-4 py-1.5 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm font-medium mb-6 animate-fade-in">
-              Hyderabad's Trusted Corporate Transport Partner
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-secondary mb-6 animate-slide-up">
-              Safe, Smart & <span className="text-primary">Sustainable</span> Corporate Rides
-            </h1>
-            <p className="text-lg text-secondary/80 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: "0.1s" }}>
-              Experience premium employee transportation with zero breakdowns, 
-              MoveInSync integration, and 100% verified chauffeurs. Your corporate 
-              journey, our commitment.
-            </p>
-            <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              <Link to="/contact">
-                <Button variant="hero" size="xl">
-                  Book Your Ride
-                </Button>
-              </Link>
-              <Link to="/fleet-safety">
-                <Button variant="heroOutline" size="xl">
-                  Explore Fleet
-                </Button>
-              </Link>
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
+                <Shield className="w-4 h-4" />
+                Trusted by 19+ Leading Corporations
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6">
+                Your Premier <span className="text-primary">Corporate Travel</span> Partner
+              </h1>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Technology-driven employee commute and executive transportation solutions. Safe, reliable, and available 24×7 across India.
+              </p>
+              
+              <div className="flex flex-wrap gap-6 mb-8">
+                <span className="inline-flex items-center gap-2 text-sm text-foreground">
+                  <Shield className="w-4 h-4 text-primary" />
+                  Background Verified
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-foreground">
+                  <Clock className="w-4 h-4 text-primary" />
+                  24/7 Available
+                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-foreground">
+                  <MapPin className="w-4 h-4 text-primary" />
+                  GPS Tracked
+                </span>
+              </div>
+              
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact">
+                  <Button size="xl">
+                    Request Corporate Quote
+                  </Button>
+                </Link>
+                <a href="tel:+919876543210">
+                  <Button variant="outline" size="xl" className="gap-2">
+                    <Phone className="w-5 h-5" />
+                    Call Now
+                  </Button>
+                </a>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img
+                src={heroImage}
+                alt="Professional chauffeur driving corporate sedan"
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-2xl"
+              />
+              <div className="absolute bottom-6 left-6 bg-card px-5 py-4 rounded-xl shadow-lg border border-border flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-xl font-bold text-foreground">6+ Years</div>
+                  <div className="text-sm text-muted-foreground">Trusted Service</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
