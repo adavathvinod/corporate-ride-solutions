@@ -6,10 +6,10 @@ import heroImage from "@/assets/hero-driver-sedan.jpg";
 import teamImage from "@/assets/team-aditya-travels.png";
 
 const stats = [
-  { icon: Shield, value: "0", label: "Breakdowns", suffix: "" },
-  { icon: Clock, value: "100", label: "Client Retention", suffix: "%" },
-  { icon: Users, value: "50", label: "Corporate Clients", suffix: "+" },
-  { icon: Award, value: "10", label: "Years Experience", suffix: "+" },
+  { icon: Clock, value: "6", label: "Years Experience", suffix: "+" },
+  { icon: Users, value: "100", label: "Professional Drivers", suffix: "" },
+  { icon: Award, value: "80", label: "Satisfied Clients", suffix: "+" },
+  { icon: Shield, value: "250", label: "Trips Per Day", suffix: "+" },
 ];
 
 const features = [
