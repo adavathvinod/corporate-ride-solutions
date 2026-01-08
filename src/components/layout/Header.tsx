@@ -2,7 +2,29 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logoImage from "@/assets/logo-aditya-travels.png";
+
+const Logo = () => (
+  <div className="flex flex-col items-center">
+    {/* Red swoosh arc */}
+    <svg 
+      viewBox="0 0 120 30" 
+      className="w-28 h-7 -mb-1"
+      aria-hidden="true"
+    >
+      <path 
+        d="M10 25 Q60 -5 110 20" 
+        stroke="hsl(var(--primary))" 
+        strokeWidth="4" 
+        fill="none" 
+        strokeLinecap="round"
+      />
+    </svg>
+    {/* Brand name */}
+    <span className="font-serif text-xl font-semibold tracking-wide text-foreground">
+      Aditya <span className="text-primary">Travels</span>
+    </span>
+  </div>
+);
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -22,11 +44,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src={logoImage} 
-              alt="Aditya Travels - Corporate Transport Partner" 
-              className="h-14 w-auto"
-            />
+            <Logo />
           </Link>
 
           {/* Desktop Navigation */}
