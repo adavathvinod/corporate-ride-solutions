@@ -1,67 +1,129 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MapPin, Smartphone, Shield, BarChart3, Clock, Users, Wifi, Lock } from "lucide-react";
+import { MapPin, Smartphone, Shield, BarChart3, Clock, Users, Lock, AlertTriangle, FileText, Route, CheckCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
 const techFeatures = [
   {
-    icon: MapPin,
-    title: "Real-time GPS Tracking",
-    description: "Monitor every vehicle in your fleet with precision GPS tracking. Know exactly where your employees are at any given moment.",
-  },
-  {
-    icon: Smartphone,
-    title: "MoveInSync Integration",
-    description: "Seamless integration with MoveInSync platform for automated rostering, trip scheduling, and employee self-service booking.",
-  },
-  {
     icon: Lock,
-    title: "OTP Verified Rides",
-    description: "Enhanced security with OTP verification for each trip. Employees verify their ride before boarding for complete safety.",
+    title: "OTP-Verified Rides",
+    description: "Every ride starts with OTP verification, ensuring only authorized employees board the vehicle.",
   },
   {
-    icon: BarChart3,
-    title: "Analytics Dashboard",
-    description: "Comprehensive reporting and analytics to track usage patterns, costs, and optimize your transportation budget.",
+    icon: MapPin,
+    title: "Real-Time GPS Tracking",
+    description: "Track all your assigned vehicles in real-time through the client portal or mobile app.",
   },
   {
-    icon: Clock,
-    title: "Automated Scheduling",
-    description: "Smart routing algorithms optimize pickup times and routes, reducing wait times and improving efficiency.",
+    icon: Route,
+    title: "Route Optimization",
+    description: "AI-powered routing algorithms minimize travel time and fuel consumption for efficient commutes.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "SOS & Safety Alerts",
+    description: "Emergency SOS button in every vehicle connected to our 24/7 control room.",
+  },
+  {
+    icon: FileText,
+    title: "Comprehensive Reporting",
+    description: "Download detailed reports on usage, punctuality, cost centers, and more.",
   },
   {
     icon: Users,
     title: "Employee Self-Service",
-    description: "Easy-to-use mobile app for employees to book, modify, or cancel rides with instant confirmation.",
+    description: "Employees can book, modify, and track their rides through the mobile app.",
   },
 ];
 
-const integrations = [
-  { name: "MoveInSync", description: "Complete employee transport management" },
-  { name: "SAP Integration", description: "Expense management and reporting" },
-  { name: "HR Systems", description: "Employee data synchronization" },
-  { name: "Custom APIs", description: "Seamless integration with your systems" },
+const moveInSyncFeatures = [
+  "Real-time two-way data exchange",
+  "Automated trip scheduling and dispatch",
+  "Live GPS tracking and ETA updates",
+  "Instant billing and invoice generation",
+  "Comprehensive safety compliance",
+];
+
+const apiStats = [
+  { label: "API Uptime", value: "99.9%" },
+  { label: "Data Sync", value: "Real-time" },
+  { label: "Security", value: "SSL/TLS" },
+];
+
+const clientPortalFeatures = [
+  {
+    title: "Real-Time Dashboard",
+    description: "View live status of all active trips, vehicle locations, and driver assignments in one place.",
+    features: ["Live vehicle tracking on map", "Active trip status", "Driver details and contact", "ETA predictions"],
+  },
+  {
+    title: "Financial Management",
+    description: "Complete visibility into billing, invoices, and payment history.",
+    features: ["View & download invoices", "Online payment integration", "Cost center allocation", "Budget tracking"],
+  },
+  {
+    title: "Analytics & Reports",
+    description: "Generate custom reports to analyze usage patterns and optimize costs.",
+    features: ["Trip history reports", "Punctuality metrics", "Usage breakdown by department", "CSV/PDF export"],
+  },
+  {
+    title: "User Management",
+    description: "Hierarchical access control for different stakeholders.",
+    features: ["Admin/HR full access", "Manage department wise", "Employee self-service", "Custom role creation"],
+  },
 ];
 
 const Technology = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <span className="text-primary text-sm font-semibold uppercase tracking-widest">Technology</span>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mt-2 mb-6">
-            Smart Technology for <span className="text-primary">Modern Transport</span>
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            Powered by cutting-edge technology and seamless MoveInSync integration, 
-            we deliver intelligent transportation solutions for the modern workplace.
-          </p>
+      {/* MoveInSync Integration Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-4">
+            Fleet Management
+          </span>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
+                MoveInSync Integration
+              </h1>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Our operations are powered by MoveInSync – India's leading employee 
+                transportation management platform. This integration enables:
+              </p>
+              <ul className="space-y-3">
+                {moveInSyncFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3 text-foreground">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="bg-card p-6 rounded-2xl card-shadow border border-border">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <BarChart3 className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground">API Integration</h3>
+              </div>
+              <div className="space-y-4">
+                {apiStats.map((stat, i) => (
+                  <div key={i} className="flex items-center justify-between py-3 border-b border-border last:border-0">
+                    <span className="text-muted-foreground">{stat.label}</span>
+                    <span className="font-semibold text-primary">{stat.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Main Tech Features */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {techFeatures.map((feature, index) => (
@@ -84,73 +146,38 @@ const Technology = () => {
         </div>
       </section>
 
-      {/* MoveInSync Feature */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-primary text-sm font-semibold uppercase tracking-widest">MoveInSync Partner</span>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2 mb-6">
-                Seamless Employee Transport Management
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                As certified MoveInSync partners, we offer enterprise-grade transportation 
-                management that integrates directly with your HR systems and workflows.
-              </p>
-              <ul className="space-y-4 mb-8">
-                {[
-                  { icon: Wifi, text: "Live tracking for employees and managers" },
-                  { icon: Shield, text: "SOS alerts and emergency support" },
-                  { icon: Clock, text: "Automated roster management" },
-                  { icon: BarChart3, text: "Cost optimization insights" },
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-foreground">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span>{item.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-card p-8 rounded-2xl card-shadow border border-border">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Smartphone className="w-10 h-10 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">Mobile App Features</h3>
-              </div>
-              <div className="space-y-4">
-                {["Real-time vehicle tracking", "Trip booking & cancellation", "Driver details & ratings", "Expense reports", "Shift scheduling", "SOS button"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span className="text-foreground text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Integrations */}
+      {/* Client Portal Features */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">Integrations</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">
-              Works With Your Existing Systems
+            <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-4">
+              Client Portal
+            </span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+              Secure Client Portal Features
             </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Access everything you need to manage your corporate transportation through our secure, 
+              role-based client portal.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {integrations.map((item, index) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {clientPortalFeatures.map((item, index) => (
               <div
                 key={index}
-                className="p-6 bg-card rounded-xl card-shadow border border-border text-center hover:border-primary/30 transition-colors"
+                className="p-8 bg-card rounded-xl card-shadow border border-border"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.name}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm mb-6">{item.description}</p>
+                <ul className="space-y-3">
+                  {item.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3 text-foreground text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -158,17 +185,11 @@ const Technology = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 hero-gradient">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-6">
-            Experience Smart Transportation
-          </h2>
-          <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-            Schedule a demo to see how our technology can transform your corporate transportation.
-          </p>
           <Link to="/contact">
-            <Button variant="heroOutline" size="xl">
-              Schedule Demo
+            <Button size="xl" className="rounded-full">
+              Access Client Portal →
             </Button>
           </Link>
         </div>
