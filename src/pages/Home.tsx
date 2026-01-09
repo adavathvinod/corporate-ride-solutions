@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, Award, Users, CheckCircle, MapPin, Star, Phone } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import StatCounter from "@/components/home/StatCounter";
 import heroImage from "@/assets/hero-driver-sedan.jpg";
 import teamImage from "@/assets/team-aditya-travels.png";
 
 const stats = [
-  { icon: Clock, value: "6", label: "Years Experience", suffix: "+" },
-  { icon: Users, value: "100", label: "Professional Drivers", suffix: "" },
-  { icon: Award, value: "80", label: "Satisfied Clients", suffix: "+" },
-  { icon: Shield, value: "250", label: "Trips Per Day", suffix: "+" },
+  { icon: Clock, value: 6, label: "Years Experience", suffix: "+" },
+  { icon: Users, value: 100, label: "Professional Drivers", suffix: "" },
+  { icon: Award, value: 80, label: "Satisfied Clients", suffix: "+" },
+  { icon: Shield, value: 250, label: "Trips Per Day", suffix: "+" },
 ];
 
 const features = [
@@ -117,15 +118,13 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <stat.icon className="w-7 h-7 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
-                  {stat.value}{stat.suffix}
-                </div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
-              </div>
+              <StatCounter
+                key={index}
+                icon={stat.icon}
+                value={stat.value}
+                label={stat.label}
+                suffix={stat.suffix}
+              />
             ))}
           </div>
         </div>
