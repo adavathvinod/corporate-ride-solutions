@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import logoImage from "@/assets/logo-aditya-travel.png";
 
 const navLinks = [
@@ -17,7 +17,25 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top Info Bar */}
+      <div className="bg-foreground text-background py-2">
+        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
+          <span>Safe. Reliable. 24×7 Commute.</span>
+          <div className="hidden sm:flex items-center gap-6">
+            <a href="tel:+918523880666" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone className="w-3.5 h-3.5" />
+              +91 8523-880666
+            </a>
+            <a href="mailto:at@adityatrav.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail className="w-3.5 h-3.5" />
+              at@adityatrav.com
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Main Header */}
+      <div className="bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -99,6 +117,7 @@ const Header = () => {
             </nav>
           </div>
         )}
+      </div>
       </div>
     </header>
   );
