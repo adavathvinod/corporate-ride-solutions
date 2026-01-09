@@ -94,17 +94,19 @@ const Home = () => {
             </div>
             
             <div className="relative">
-              <img
-                src={heroImage}
-                alt="Professional chauffeur driving corporate sedan"
-                className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute bottom-6 left-6 bg-card px-5 py-4 rounded-xl shadow-lg border border-border flex items-center gap-3">
+              <div className="rounded-2xl shadow-2xl overflow-hidden">
+                <img
+                  src={heroImage}
+                  alt="Professional chauffeur driving corporate sedan"
+                  className="w-full h-[350px] md:h-[450px] object-cover object-center"
+                />
+              </div>
+              <div className="absolute -bottom-4 left-0 bg-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-3 border border-border/20">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <Shield className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-foreground">6+ Years</div>
+                  <div className="text-lg font-bold text-foreground">6+ Years</div>
                   <div className="text-sm text-muted-foreground">Trusted Service</div>
                 </div>
               </div>
