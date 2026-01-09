@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Clock, Award, Users, CheckCircle, MapPin, Star, Phone } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import StatCounter from "@/components/home/StatCounter";
-import heroImage from "@/assets/hero-driver-sedan.jpg";
+import heroImage from "@/assets/hero-driver-sedan.png";
 import teamImage from "@/assets/team-aditya-travels.png";
 
 const stats = [
