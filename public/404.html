@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Redirect to index.html with the current path as a query parameter
+    // This handles cases where .htaccess doesn't work
+    sessionStorage.setItem('redirect', window.location.pathname);
+    window.location.replace('/');
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
