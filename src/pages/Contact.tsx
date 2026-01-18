@@ -50,7 +50,7 @@ const Contact = () => {
 
       <Header />
 
-      <main className="md:pt-28">
+      <main className="pt-28">
         {/* Hero Banner */}
         <section className="bg-secondary py-16 md:py-20">
           <div className="section-container text-center">
