@@ -18,4 +18,4 @@ User-agent: facebookexternalhit
 Allow: /
 
 # Sitemap location
-Sitemap: https://corporateride-solutions.com/sitemap.xml
+Sitemap: https://adityatrav.com/sitemap.xml
