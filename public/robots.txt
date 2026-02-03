@@ -1,14 +1,21 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Specific optimization for Googlebot
 User-agent: Googlebot
 Allow: /
 
+# Specific optimization for Bingbot
 User-agent: Bingbot
 Allow: /
 
+# Social media bots
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://corporateride-solutions.com/sitemap.xml
