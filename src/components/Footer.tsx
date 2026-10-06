@@ -166,11 +166,26 @@ export function Footer() {
       <div className="border-t border-secondary-foreground/10">
         <div className="section-container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-up">
-            <p className="text-secondary-foreground/60 font-sans text-sm">
-              © {currentYear} Aditya Travels. All rights reserved.
-            </p>
-            <p className="text-secondary-foreground/60 font-sans text-sm">
-              GSTIN: 36BOAPG5682R2ZA
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <p className="text-secondary-foreground/60 font-sans text-sm">
+                © {currentYear} Aditya Travels. All rights reserved.
+              </p>
+              <p className="text-secondary-foreground/60 font-sans text-sm">
+                GSTIN: 36BOAPG5682R2ZA
+              </p>
+            </div>
+            <p className="text-secondary-foreground/60 font-sans text-sm text-center md:text-right">
+              Digital growth partner —{" "}
+              <a
+                href="https://www.wimira.com/"
+                target="_blank"
+                rel="noopener"
+                title="Wimira Digital — digital growth partner for web, UX/UI, SEO, GEO, content & technology"
+                aria-label="Digital growth partner Wimira Digital — web design, development, UX/UI, SEO, GEO and growth services"
+                className="text-primary hover:underline transition-colors"
+              >
+                Wimira Digital
+              </a>
             </p>
           </div>
         </div>
